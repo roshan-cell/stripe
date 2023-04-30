@@ -1,9 +1,10 @@
 const button = document.querySelector("button")
 button.addEventListener("click", () => {
-  fetch("http://localhost:3000/create-checkout-session", {
+  fetch("/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/javascript",
+      "Authorization" : 'Bearer STRIPE_KEY'
     },
     // sent the item u want
     body: JSON.stringify({
@@ -19,8 +20,8 @@ button.addEventListener("click", () => {
       return res.json().then(json => Promise.reject(json))
     })
     .then(({ url }) => {
-      console.log(url)
-      // window.location = url
+      
+      window.location = url
     })
     .catch(e => {
       console.error(e.error)
