@@ -4,7 +4,6 @@ button.addEventListener("click", () => {
     method: "POST",
     headers: {
       "Content-Type": "application/javascript",
-      "Authorization" : 'Bearer STRIPE_KEY'
     },
     // sent the item u want
     body: JSON.stringify({
